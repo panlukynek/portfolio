@@ -67,6 +67,13 @@
                 background: #ffffff;
                 color: #eb6f40;
             }
+                .printables_glow{
+                    box-shadow: 0px 0px 300px 0px #00000000;
+                    transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+                }
+                .printables_glow:hover{
+                    box-shadow: 0px 0px 300px 0px #eb6f40ff;
+                }
 
         .itch_link{
             background: #fa5c5c;
@@ -76,6 +83,13 @@
                 background: #ffffff;
                 color: #fa5c5c;
             }
+                .itch_glow{
+                    box-shadow: 0px 0px 300px 0px #00000000;
+                    transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+                }
+                .itch_glow:hover{
+                    box-shadow: 0px 0px 300px 0px #fa5c5cff;
+                }
 
         .github_link{
             background: #1f2328;
@@ -85,6 +99,15 @@
                 background: #ffffff;
                 color: #1f2328;
             }
+                .github_glow{
+                    box-shadow: 0px 0px 300px 0px #00000000;
+                    transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+                }
+                .github_glow:hover{
+                    box-shadow: 0px 0px 300px 0px #ffffffff;
+                }
+
+        
 
         .intro{
             width: 100%;
@@ -125,7 +148,7 @@
                 align-items: center;
             }
                 .intro_text{
-                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    font-family: sans-serif;
                     color: #ffffff;
                     font-size: 4em;
                     user-select: none;
@@ -146,15 +169,15 @@
 <body>
     <div id="intro_overlay">
             <div id="link_container">
-                <a href="https://www.printables.com/@panlukynek_2255896" target="_blank" rel="noopener noreferrer" class="linkhover printables_link"><span hover-title="Printables">Printables</span></a>
-                <a href="https://panlukynek.itch.io/" target="_blank" rel="noopener noreferrer" class="linkhover itch_link"><span hover-title="itch.io">itch.io</span></a>
-                <a href="https://github.com/panlukynek" target="_blank" rel="noopener noreferrer" class="linkhover github_link"><span hover-title="GitHub">GitHub</span></a>
+                <a href="https://www.printables.com/@panlukynek_2255896" target="_blank" rel="noopener noreferrer" class="linkhover printables_link printables_glow"><span hover-title="Printables">Printables</span></a>
+                <a href="https://panlukynek.itch.io/" target="_blank" rel="noopener noreferrer" class="linkhover itch_link itch_glow"><span hover-title="itch.io">itch.io</span></a>
+                <a href="https://github.com/panlukynek" target="_blank" rel="noopener noreferrer" class="linkhover github_link github_glow"><span hover-title="GitHub">GitHub</span></a>
             </div>
     </div>
     
     <div class="intro">
         <div class="intro_art">
-            <div class="intro_text" onclick="intro_overlay_on()"><i>Lukáš Molnáry</i></div>
+            <div class="intro_text" onclick="intro_overlay_on()"><i><b>Lukáš Molnáry</b></i></div>
         </div>
     </div>
     
