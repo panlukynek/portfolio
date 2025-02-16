@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@panlukynek</title>
+    <title>Portfolio</title>
     <style>
         body{
             background-color: #000000;
@@ -22,6 +22,9 @@
             background-size: cover;
             background-attachment: fixed;
         }
+        .noscroll{
+            overflow: hidden;
+        }
         a{
             display: block;
             font-size: 1em;
@@ -30,35 +33,59 @@
         }
         .linkhover{
             display: inline-block;
-            background: rgb(255, 255, 255);
             overflow: hidden;
             perspective: 100%;
             perspective-origin: 50% 50%;
-            color:rgb(0, 0, 0);
             font-family: monospace;
         }
-        .linkhover span{
-            display: block;
-            position: relative;
-            transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
-            transform-origin: 50% 0%;
-            transform-style: preserve-3d;
+            .linkhover span{
+                display: block;
+                position: relative;
+                transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+                transform-origin: 50% 0%;
+                transform-style: preserve-3d;
+            }
+            .linkhover:hover span{
+                transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
+            }
+            .linkhover span:after{
+                content: attr(hover-title);
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                white-space: nowrap;
+                transform-origin: 50% 0%;
+                transform: translate3d( 0px, 100%, 0px ) rotateX( -90deg );
+            }
+
+        .printables_link{
+            background: #eb6f40;
+            color:#ffffff;
         }
-        .linkhover:hover span{
-            transform: translate3d( 0px, 0px, -20px ) rotateX( 90deg );
+            .printables_link span:after{
+                background: #ffffff;
+                color: #eb6f40;
+            }
+
+        .itch_link{
+            background: #fa5c5c;
+            color:#ffffff;
         }
-        .linkhover span:after{
-            content: attr(hover-title);
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            white-space: nowrap;
-            color: rgb(255, 255, 255);
-            background: rgb(0, 0, 0);
-            transform-origin: 50% 0%;
-            transform: translate3d( 0px, 100%, 0px ) rotateX( -90deg );
+            .itch_link span:after{
+                background: #ffffff;
+                color: #fa5c5c;
+            }
+
+        .github_link{
+            background: #1f2328;
+            color:#ffffff;
         }
+            .github_link span:after{
+                background: #ffffff;
+                color: #1f2328;
+            }
+
         .intro{
             width: 100%;
             height: 100vh;
@@ -67,7 +94,7 @@
             flex-direction: column;
             justify-content: space-between;
         }
-            #intro_overlay {
+            #intro_overlay{
                 position: fixed;
                 display: none;
                 width: 100%;
@@ -79,17 +106,15 @@
                 background-color: rgba(0, 0, 0, 0.5);
                 backdrop-filter: blur(10px);
                 z-index: 99;
-                cursor: pointer;
             }
-            #text{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                font-size: 50px;
-                color: white;
-                transform: translate(-50%,-50%);
-                -ms-transform: translate(-50%,-50%);
-            }
+                #link_container{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    font-size: 50px;
+                    color: white;
+                    transform: translate(-50%,-50%);
+                }
             .intro_art{
                 width: 100%;
                 height: 100vh;
@@ -119,8 +144,12 @@
     </style>
 </head>
 <body>
-    <div id="intro_overlay" onclick="intro_overlay_off()">
-            <div id="text">Overlay Text</div>
+    <div id="intro_overlay">
+            <div id="link_container">
+                <a href="https://www.printables.com/@panlukynek_2255896" target="_blank" rel="noopener noreferrer" class="linkhover printables_link"><span hover-title="Printables">Printables</span></a>
+                <a href="https://panlukynek.itch.io/" target="_blank" rel="noopener noreferrer" class="linkhover itch_link"><span hover-title="itch.io">itch.io</span></a>
+                <a href="https://github.com/panlukynek" target="_blank" rel="noopener noreferrer" class="linkhover github_link"><span hover-title="GitHub">GitHub</span></a>
+            </div>
     </div>
     
     <div class="intro">
@@ -130,16 +159,25 @@
     </div>
     
     <div class="content">
-        <a href="#" class="linkhover"><span hover-title="LINK HOVER">LINK HOVER</span></a>
+        
         <a href="https://www.youtube.com/@panlukynek" target="_blank" rel="noopener noreferrer" style="padding: 0.5em;"><i>Lukáš Molnáry</i></a>
     </div>
     
     <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                intro_overlay_off();
+            }
+        });
+        
         function intro_overlay_on() {
             document.getElementById("intro_overlay").style.display = "block";
+            document.body.classList.add('noscroll');
         }
+        
         function intro_overlay_off() {
             document.getElementById("intro_overlay").style.display = "none";
+            document.body.classList.remove('noscroll');
         }
     </script>
 </body>
