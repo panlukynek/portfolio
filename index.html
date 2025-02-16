@@ -79,6 +79,7 @@
                 background-color: rgba(0, 0, 0, 0.5);
                 backdrop-filter: blur(10px);
                 z-index: 99;
+                cursor: pointer;
             }
             #text{
                 position: absolute;
@@ -87,6 +88,7 @@
                 font-size: 50px;
                 color: white;
                 transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
             }
             .intro_art{
                 width: 100%;
@@ -101,10 +103,12 @@
                     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                     color: #ffffff;
                     font-size: 4em;
+                    user-select: none;
                     transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
                 }
                     .intro_text:hover{
                         font-size: 5em;
+                        cursor: pointer;
                     }
         .content{
             width: 100%;
@@ -115,24 +119,26 @@
     </style>
 </head>
 <body>
-    <div id="intro_overlay">
-            <div id="text" onclick="off()">Overlay Text</div>
+    <div id="intro_overlay" onclick="intro_overlay_off()">
+            <div id="text">Overlay Text</div>
     </div>
+    
     <div class="intro">
         <div class="intro_art">
-            <div class="intro_text" onclick="on()"><i>Lukáš Molnáry</i></div>
+            <div class="intro_text" onclick="intro_overlay_on()"><i>Lukáš Molnáry</i></div>
         </div>
     </div>
+    
     <div class="content">
         <a href="#" class="linkhover"><span hover-title="LINK HOVER">LINK HOVER</span></a>
         <a href="https://www.youtube.com/@panlukynek" target="_blank" rel="noopener noreferrer" style="padding: 0.5em;"><i>Lukáš Molnáry</i></a>
     </div>
     
     <script>
-        function on() {
+        function intro_overlay_on() {
             document.getElementById("intro_overlay").style.display = "block";
         }
-        function off() {
+        function intro_overlay_off() {
             document.getElementById("intro_overlay").style.display = "none";
         }
     </script>
