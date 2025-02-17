@@ -182,7 +182,6 @@ img{
     height: 100%;
     object-fit: contain;
     pointer-events: none;
-    margin: 0;
 }
 
 
@@ -225,6 +224,7 @@ img{
             align-items: center;
             padding: 4em;
             box-sizing: border-box;
+            background-color: #eb6f40ff;
         }
             .content_image_right{
                 justify-content: right;
