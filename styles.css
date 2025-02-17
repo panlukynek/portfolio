@@ -178,12 +178,13 @@ ul{
     margin: 1rem;
 }
 img{
-    width: 35em;
-    height: 35em;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     pointer-events: none;
     margin: 0;
 }
+
 
  .content{
     width: 100%;
@@ -200,7 +201,7 @@ img{
     }
         .content_text_left, .content_text_right{
             width: 50%;
-            height: 100vh;
+            height: 100%;
             display: flex;
             justify-content: left;
             align-items: center;
@@ -217,7 +218,7 @@ img{
         
         .content_image_left, .content_image_right{
             width: 50%;
-            height: 100vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: left;
