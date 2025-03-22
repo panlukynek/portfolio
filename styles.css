@@ -7,15 +7,12 @@ body{
     font-size: xx-large;
     font-family:monospace;
     font-weight: 0;
-    overflow-x: hidden;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Images/cabin.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
-    user-select: none;
 }
 .noscroll{
     overflow: hidden;
@@ -112,8 +109,9 @@ a{
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1rem);
     z-index: 99;
+    user-select: none;
 }
     .link_container{
         position: absolute;
@@ -153,6 +151,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    user-select: none;
 }
     .intro_art{
         width: 100%;
@@ -214,7 +213,7 @@ img:hover{
                 justify-content: right;
             }
             .content_subtext{
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(1rem);
                 border-radius: 1em;
                 padding: 1em;
             }
