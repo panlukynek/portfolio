@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-container img:not(:first-child) {
+            display: none;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 1;
+        }
+
+        .gallery-overlay svg {
+            fill: #ffffff;
+            width: 2rem;
+            height: 2rem;
+            filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 1));
+        }
+
+        .gallery-shade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .gallery-shade {
+            opacity: 1;
+        }
+
+        .plus-icon {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+
+
+        .popup-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-image img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .popup-image span {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: #fff;
+            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 1));
+            cursor: pointer;
+            padding: 20px;
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        figure {
+            max-width: 100%;
+            margin: 1rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <figure class="gallery">
+        <div class="gallery-container">
+            <img src="" alt="Project example 1">
+            <img src="" alt="Project example 2">
+            <img src="" alt="Project example 3">
+            <div class="gallery-shade"></div>
+            <div class="gallery-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 45.964 45.964">
+                    <g>
+                        <g>
+                            <path d="M7.071,30.834V11.062H4.042C1.803,11.062,0,12.893,0,15.13v26.732c0,2.24,1.803,4.051,4.042,4.051h26.733    c2.238,0,4.076-1.811,4.076-4.051v-2.92H15.179C10.733,38.943,7.071,35.281,7.071,30.834z"/>
+                            <path d="M41.913,0.05H15.179c-2.238,0-4.066,1.813-4.066,4.051v26.733c0,2.241,1.829,4.067,4.066,4.067h26.734    c2.237,0,4.051-1.826,4.051-4.067V4.102C45.964,1.862,44.15,0.05,41.913,0.05z M41.363,28.589    c-0.223,0.412-0.652,0.656-1.12,0.656H17.336c-0.403,0-0.782-0.18-1.022-0.502c-0.24-0.324-0.313-0.736-0.197-1.123l3.277-10.839    c0.216-0.713,0.818-1.24,1.554-1.361c0.736-0.12,1.476,0.19,1.908,0.797l4.582,6.437c0.617,0.867,1.812,1.082,2.689,0.484    l4.219-2.865c0.434-0.295,0.967-0.402,1.48-0.299c0.515,0.102,0.966,0.408,1.253,0.848l4.229,6.472    C41.564,27.687,41.585,28.179,41.363,28.589z"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </figure>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleries = document.querySelectorAll('.gallery');
+            
+            galleries.forEach(gallery => {
+                const overlay = gallery.querySelector('.gallery-overlay');
+                const images = gallery.querySelectorAll('img');
+                
+                overlay.addEventListener('click', () => {
+                    const popup = document.createElement('div');
+                    popup.className = 'popup-image';
+                    popup.innerHTML = `
+                        <span>&times;</span>
+                        <img src="${images[0].src}" alt="${images[0].alt}">
+                        <div class="prev">❮</div>
+                        <div class="next">❯</div>
+                    `;
+                    
+                    document.body.appendChild(popup);
+                    popup.style.display = 'block';
+                    
+                    let currentIndex = 0;
+                    const closeBtn = popup.querySelector('span');
+                    const prevBtn = popup.querySelector('.prev');
+                    const nextBtn = popup.querySelector('.next');
+                    const popupImg = popup.querySelector('img');
+                    
+                    closeBtn.onclick = () => {
+                        popup.remove();
+                    };
+                    
+                    prevBtn.onclick = () => {
+                        currentIndex = (currentIndex - 1 + images.length) % images.length;
+                        popupImg.src = images[currentIndex].src;
+                        popupImg.alt = images[currentIndex].alt;
+                    };
+                    
+                    nextBtn.onclick = () => {
+                        currentIndex = (currentIndex + 1) % images.length;
+                        popupImg.src = images[currentIndex].src;
+                        popupImg.alt = images[currentIndex].alt;
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html>

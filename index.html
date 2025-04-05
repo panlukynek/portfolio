@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="intro_overlay">
@@ -21,7 +21,7 @@
     <div class="intro">
         <div class="intro_art">
             <div class="intro_text" onclick="intro_overlay_on()">
-                <i><b>Lukáš Molnáry</b></i>
+                Lukáš Molnáry
             </div>
         </div>
     </div>
@@ -29,8 +29,8 @@
     <div class="content">
         <div class="content_peice">
             <div class="content_image_right">
-                <img src="Images/pc_gpu.jpg" alt="PC - GPU">
-                <img src="Images/pc_bottom.jpg" alt="PC - Bottom">
+                <img src="rsc/pc_gpu.jpg" alt="PC - GPU">
+                <img src="rsc/pc_bottom.jpg" alt="PC - Bottom">
             </div>
             <div class="content_text_left">
                 <div class="content_subtext">
@@ -38,7 +38,7 @@
                 <br>
                 <ul>
                     <li>Ryzen 5800X</li>
-                    <li>RTX 3060</li>
+                    <li>RTX 3060 12GB</li>
                     <li>32GB RAM</li>
                     <li>2TB NVMe SSD</li>
                     <li>240mm AIO</li>
@@ -48,18 +48,29 @@
                 </div>
             </div>
         </div>
+        <div class="content_peice">
+            <div class="content_text_right">
+                <div class="content_subtext">
+                mITX Počítač
+                <br>
+                <ul>
+                    <li>Ryzen 5800X</li>
+                    <li>RTX 3060 12GB</li>
+                    <li>32GB RAM</li>
+                    <li>2TB NVMe SSD</li>
+                    <li>240mm AIO</li>
+                    <li>750W PSU</li>
+                    <li>Lian-Li Dan A4 H2O</li>
+                </ul>
+                </div>
+            </div>
+            <div class="content_image_left">
+                <img src="rsc/pc_gpu.jpg" alt="PC - GPU">
+                <img src="rsc/pc_bottom.jpg" alt="PC - Bottom">
+            </div>
+        </div>
     </div>
     
-    <script>
-        function intro_overlay_on() {
-            document.getElementById("intro_overlay").style.display = "block";
-            document.body.classList.add('noscroll');
-        }
-        
-        function intro_overlay_off() {
-            document.getElementById("intro_overlay").style.display = "none";
-            document.body.classList.remove('noscroll');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
