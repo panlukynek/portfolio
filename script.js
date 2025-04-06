@@ -10,9 +10,12 @@ function intro_overlay_off() {
 
 window.addEventListener('scroll', function() {
     const body = document.body;
-    if (window.scrollY >= window.innerHeight) {
+    const intro_text = document.getElementById("intro_text");
+    if (window.scrollY >= window.innerHeight / 2 + intro_text.offsetHeight) {
         body.style.backdropFilter = "blur(0.5rem)";
+        body.style.backgroundSize = "100%";
     } else {
         body.style.backdropFilter = "none";
+        body.style.backgroundSize = "105%";
     }
 });
