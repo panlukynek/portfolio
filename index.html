@@ -1,42 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Lukáš Molnáry</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=print" />
 </head>
 <body>
-    <div id="intro_overlay">
-        <div class="link_container">    
+    <div class="intro">
+        <div class="intro_art">
+            <div class="intro_text highlight">
+                Lukáš Molnáry
+            </div>
+
             <div class="links">
                 <a href="https://www.printables.com/@panlukynek_2255896" target="_blank" rel="noopener noreferrer" class="linkhover printables_link printables_glow"><span hover-title="Printables">Printables</span></a>
                 <a href="https://panlukynek.itch.io/" target="_blank" rel="noopener noreferrer" class="linkhover itch_link itch_glow"><span hover-title="itch.io">itch.io</span></a>
                 <a href="https://github.com/panlukynek" target="_blank" rel="noopener noreferrer" class="linkhover github_link github_glow"><span hover-title="GitHub">GitHub</span></a>
-            </div>
-            <div class="close_button" onclick="intro_overlay_off()" style="cursor: pointer;">[zavřít]</div>
-        </div>
-    </div>
-    
-    <div class="intro">
-        <div class="intro_art">
-            <div id="intro_text" onclick="intro_overlay_on()">
-                Lukáš Molnáry
+                <a href="https://www.youtube.com/@panlukynek" target="_blank" rel="noopener noreferrer" class="linkhover youtube_link youtube_glow"><span hover-title="YouTube">YouTube</span></a>
             </div>
         </div>
     </div>
     
     <div class="content">
-        <div class="content_peice">
-            <div class="content_image_right">
-                <img src="rsc/pc_gpu.jpg" alt="PC - GPU">
-                <img src="rsc/pc_bottom.jpg" alt="PC - Bottom">
+        <div class="content_piece">
+            <div class="content_image">
+                <img src="rsc/pc_gpu.webp" alt="PC - GPU">
+                <img src="rsc/pc_bottom.webp" alt="PC - Bottom">
             </div>
-            <div class="content_text_left">
-                <div class="content_subtext">
-                    mITX Počítač
+            
+            <div class="content_text">
+                <div>
+                    <i class="highlight">mITX Počítač</i>
                     <br>
                     <ul>
                         <li>Ryzen 5800X</li>
@@ -50,26 +46,9 @@
                 </div>
             </div>
         </div>
-        <div class="content_peice">
-            <div class="content_text_right">
-                <div class="content_subtext">
-                    mITX Počítač
-                    <br>
-                    <ul>
-                        <li>Ryzen 5800X</li>
-                        <li>RTX 3060 12GB</li>
-                        <li>32GB RAM</li>
-                        <li>2TB NVMe SSD</li>
-                        <li>240mm AIO</li>
-                        <li>750W PSU</li>
-                        <li>Lian-Li Dan A4 H2O</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content_image_left">
-                <img src="rsc/pc_gpu.jpg" alt="PC - GPU">
-                <img src="rsc/pc_bottom.jpg" alt="PC - Bottom">
-            </div>
+        
+        <div class="content_piece" style="background-color: rgba(165, 42, 42, 0.292);">
+            <iframe src="https://www.youtube.com/embed/tjvL6sLrYBA" title="Drum Bun Drill" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube_vid"></iframe>
         </div>
     </div>
     
