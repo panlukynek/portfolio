@@ -16,7 +16,7 @@ body{
     font-family: JetBrains Mono, monospace;
     font-weight: 0;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(rsc/bus_stop.JPG);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(rsc/bus_stop.webp);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
