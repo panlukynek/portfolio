@@ -6,13 +6,14 @@
     <title>Lukáš Molnáry</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script> 
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div class="intro">
         <div class="intro_art">
             <div class="intro_text highlight">
                 <p style="font-size: 2em;">Lukáš Molnáry</p>
-                <img src="rsc/lukas.webp" alt="Lukáš Molnáry" class="lukas">
             </div>
 
             <div class="links">
@@ -23,7 +24,6 @@
             </div>
         </div>
     </div>
-    
     <div class="content">
         <div class="content_piece_hor">
             <div class="list_text">
@@ -74,78 +74,78 @@
                 <iframe src="https://www.youtube.com/embed/KYliShO5Gz0" title="NaviCart Elite 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube_vid"></iframe>
             </div>
         </div>
-
-        <div class="pc_cont">
-            <div class="pc_images">
-                <img src="rsc/pc_bottom.webp" alt="PC - Bottom">
-                <img src="rsc/pc_gpu.webp" alt="PC - GPU">
-                <img src="rsc/pc_working_gpu.webp" alt="PC - Working GPU">
-                <img src="rsc/pc_working.webp" alt="PC - Working">
+        <div class="projects">
+            <div class="project_cont">
+                <div class="project_img">
+                    <img src="rsc/pc_bottom.webp" alt="PC - Bottom">
+                    <img src="rsc/pc_gpu.webp" alt="PC - GPU">
+                    <img src="rsc/pc_working_gpu.webp" alt="PC - Working GPU">
+                    <img src="rsc/pc_working.webp" alt="PC - Working">
+                </div>
+                
+                <div class="list_text" style="top: 0; position: sticky;">
+                    <div>
+                        <i class="highlight">mITX Počítač</i>
+                        <br>
+                        <ul>
+                            <li>Ryzen 5800X</li>
+                            <li>RTX 3060 12GB</li>
+                            <li>32GB RAM</li>
+                            <li>2TB NVMe SSD</li>
+                            <li>240mm AIO</li>
+                            <li>750W PSU</li>
+                            <li>Lian-Li Dan A4 H2O</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="list_text" style="top: 0; position: sticky;">
-                <div>
-                    <i class="highlight">mITX Počítač</i>
-                    <br>
-                    <ul>
-                        <li>Ryzen 5800X</li>
-                        <li>RTX 3060 12GB</li>
-                        <li>32GB RAM</li>
-                        <li>2TB NVMe SSD</li>
-                        <li>240mm AIO</li>
-                        <li>750W PSU</li>
-                        <li>Lian-Li Dan A4 H2O</li>
-                    </ul>
+
+            <div class="project_cont">
+                <div class="project_img">
+                    <img src="rsc/ponorka1.webp" alt="Ponorka 1">
+                    <img src="rsc/ponorka2.webp" alt="Ponorka 2">
+                    <img src="rsc/ponorka3.webp" alt="Ponorka 3">
+                    <img src="rsc/ponorka4.webp" alt="Ponorka 4">
+                </div>
+                
+                <div class="list_text" style="top: 0; position: sticky;">
+                    <div>
+                        <i class="highlight">Projekt Ponorka</i>
+                        <br>
+                        <ul>
+                            <li>RC Ponorka</li>
+                            <li>RPi 3B+</li>
+                            <li>Pixhawk Flight Controller</li>
+                            <li>3S LiPo</li>
+                            <li>Vytvořeno na SSPŠ kurzu 3D tisku a modelování</li>
+                            <p>Projekt se postupně zdražoval, takže jsme dokončili pouze prototypy. Tento projekt mě naučil pracovat s Fusion360. Poslední 2 designy jsou mé, první 2 jsou kamarádovy.</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_cont">
+                <div class="project_img">
+                    <img src="rsc/cvut_2023.webp" alt="ČVUT 2023">
+                    <img src="rsc/cvut_2024.webp" alt="ČVUT 2024">
+                    <img src="rsc/arch.webp" alt="Arch Linux">
+                    <img src="rsc/fpv.webp" alt="FPV Dron">
+                </div>
+                
+                <div class="list_text" style="top: 0; position: sticky;">
+                    <div>
+                        <i class="highlight">Zbylé projekty a úspěchy</i>
+                        <br>
+                        <ul>
+                            <li>2x 2. místo v Robosoutěži ČVUT</li>
+                            <li>Arch Linux</li>
+                            <li>FPV Dron (v procesu stavby)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="pc_cont">
-            <div class="pc_images">
-                <img src="rsc/ponorka1.webp" alt="Ponorka 1">
-                <img src="rsc/ponorka2.webp" alt="Ponorka 2">
-                <img src="rsc/ponorka3.webp" alt="Ponorka 3">
-                <img src="rsc/ponorka4.webp" alt="Ponorka 4">
-            </div>
-            
-            <div class="list_text" style="top: 0; position: sticky;">
-                <div>
-                    <i class="highlight">Projekt Ponorka</i>
-                    <br>
-                    <ul>
-                        <li>RC Ponorka</li>
-                        <li>RPi 3B+</li>
-                        <li>Pixhawk Flight Controller</li>
-                        <li>4S LiPo</li>
-                        <li>Vytvořeno na SSPŠ kurzu 3D tisku a modelování</li>
-                        <p>Projekt se postupně zdražoval, takže jsme dokončili pouze prototypy. Tento projekt mě naučil pracovat s Fusion360. Poslední 2 designy jsou mé, první 2 jsou kamarádovy.</p>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="pc_cont">
-            <div class="pc_images">
-                <img src="rsc/cvut_2023.webp" alt="ČVUT 2023">
-                <img src="rsc/cvut_2024.webp" alt="ČVUT 2024">
-                <img src="rsc/arch.webp" alt="Arch Linux">
-                <img src="rsc/fpv.webp" alt="FPV Dron">
-            </div>
-            
-            <div class="list_text" style="top: 0; position: sticky;">
-                <div>
-                    <i class="highlight">Zbylé projekty a úspěchy</i>
-                    <br>
-                    <ul>
-                        <li>2x 2. místo v Robosoutěži ČVUT</li>
-                        <li>Arch Linux</li>
-                        <li>FPV Dron (v procesu stavby)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
     </div>
-    
-    <script src="script.js"></script>
 </body>
 </html>

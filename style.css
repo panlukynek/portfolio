@@ -16,7 +16,7 @@ body{
     font-family: JetBrains Mono, monospace;
     font-weight: 0;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(rsc/bus_stop.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(rsc/mountain.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,13 +85,6 @@ img{
         background: #ffffff;
         color: #eb6f40;
     }
-    .printables_glow{
-        box-shadow: 0px 0px 300px 0px #00000000;
-        transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
-    }
-        .printables_glow:hover{
-            box-shadow: 0px 0px 300px 0px #eb6f40ff;
-        }
 
 .itch_link{
     background: #fa5c5c;
@@ -101,13 +94,6 @@ img{
         background: #ffffff;
         color: #fa5c5c;
     }
-    .itch_glow{
-        box-shadow: 0px 0px 300px 0px #00000000;
-        transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
-    }
-        .itch_glow:hover{
-            box-shadow: 0px 0px 300px 0px #fa5c5cff;
-        }
 
 .github_link{
     background: #1f2328;
@@ -117,13 +103,6 @@ img{
         background: #ffffff;
         color: #1f2328;
     }
-    .github_glow{
-        box-shadow: 0px 0px 300px 0px #00000000;
-        transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
-    }
-        .github_glow:hover{
-            box-shadow: 0px 0px 300px 0px #ffffffff;
-        }
 
 .youtube_link{
     background: #ff0000;
@@ -133,6 +112,33 @@ img{
         background: #ffffff;
         color: #ff0000;
     }
+
+/* fuck firefox  */
+@supports not (-moz-appearance: none){
+    .printables_glow{
+        box-shadow: 0px 0px 300px 0px #00000000;
+        transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+    }
+        .printables_glow:hover{
+            box-shadow: 0px 0px 300px 0px #eb6f40ff;
+        }
+    
+    .itch_glow{
+        box-shadow: 0px 0px 300px 0px #00000000;
+        transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+    }
+        .itch_glow:hover{
+            box-shadow: 0px 0px 300px 0px #fa5c5cff;
+        }
+    
+    .github_glow{
+        box-shadow: 0px 0px 300px 0px #00000000;
+        transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
+    }
+        .github_glow:hover{
+            box-shadow: 0px 0px 300px 0px #ffffffff;
+        }
+    
     .youtube_glow{
         box-shadow: 0px 0px 300px 0px #00000000;
         transition: all 0.25s cubic-bezier(0.000, 0.500, 0.000, 1.000);
@@ -140,7 +146,8 @@ img{
         .youtube_glow:hover{
             box-shadow: 0px 0px 300px 0px #ff0000ff;
         }
-     
+}
+
 .links{
     font-size: 1.5rem;
     color: white;
@@ -165,11 +172,6 @@ img{
         align-items: center;
         gap: 1rem;
     }
-        .lukas{
-            border-radius: 100%;
-            width: 5em;
-            height: 5em;
-        }
         .intro_text{
             color: #ffffff;
             display: flex;
@@ -245,11 +247,25 @@ img{
             height: 100%;
     }
 
-.pc_cont{
+.projects{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+.project_cont{
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
     gap: 2rem;
+    padding: 0;
+}
+.project_cont > div{
+    padding-top: 0rem;
+    padding-right: 2rem;
+    padding-bottom: 0rem;
+    padding-left: 2rem;
 }
     .list_text{
         width: 50%;
@@ -257,16 +273,13 @@ img{
         display: flex;
         justify-content: center;
         align-items: center;
-        
-            font-size: 1.5rem;
-            padding: 2rem;
-
-            box-sizing: border-box;
-
-            margin: 0em;
+    
+        font-size: 1.5rem;
+        box-sizing: border-box;
+        margin: 0em;
         }
     
-    .pc_images{
+    .project_img{
         width: 50%;
         height: 100%;
         display: flex;
