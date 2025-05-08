@@ -17,7 +17,7 @@ body{
     font-weight: 0;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(rsc/mountain.jpg);
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -252,7 +252,6 @@ img{
     flex-direction: column;
     box-sizing: border-box;
     gap: 2rem;
-    padding-bottom: 2rem;
 }
 .project_cont{
     display: flex;
@@ -261,23 +260,22 @@ img{
     gap: 2rem;
     padding: 0;
 }
-.project_cont > div{
-    padding-top: 0rem;
-    padding-right: 2rem;
-    padding-bottom: 0rem;
-    padding-left: 2rem;
-}
     .list_text{
         width: 50%;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-    
         font-size: 1.5rem;
         box-sizing: border-box;
         margin: 0em;
-        }
+    }
+    .project_text{
+        top: 0;
+        position: sticky;
+        padding: none;
+        max-width: 1570px;
+    }
     
     .project_img{
         width: 50%;
@@ -287,6 +285,18 @@ img{
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        padding: 4rem;
+        padding-left: 2rem;
         box-sizing: border-box;
     }
+
+@media (max-width: 1024px){
+    .content_piece_hor{
+        align-items: center;
+        flex-direction: column;
+    }
+    .youtube_grid{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
