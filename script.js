@@ -1,5 +1,3 @@
-const lenis = new Lenis({autoRaf: true,});
-
 window.addEventListener('scroll', function(){
     const scrollpos = Math.min(window.scrollY / window.innerHeight, 1);
     const blur = scrollpos * 0.5;
